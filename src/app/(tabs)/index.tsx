@@ -1,116 +1,63 @@
-import {Image} from "expo-image"
-import { Link } from "expo-router"
-import { useState } from "react"
-import {View, Text, StyleSheet, TextInput, TouchableOpacity} from "react-native"
-export default function Index(){
-    const logo = "https://static-coral-wuc87jb3.edgeone.dev/"
-    const fundo = "firm-gold-3tuv4kkj.edgeone.dev"
-    const [email, setEmail,] = useState("")
-    const [senha, setSenha,] = useState("")
-    const [setor, setSetor,] = useState("")
-    return(
-        <View style = {styles.container}>
-            <Image 
-                source = {logo} 
-                style = {styles.logo}
-                contentFit="contain"
-                transition={2000}/>
-            <Text style = {styles.titulo}>CADASTRO</Text>
-            <TextInput
-                style = {styles.textInput}
-                placeholder="E-mail"
-                value={email}
-                onChangeText={setEmail}
-                />
-            <Text style = {styles.textSaida}>{email} </Text>
-            <TextInput
-                style = {styles.textInput}
-                placeholder="Senha"
-                value={senha}
-                onChangeText={setSenha}
-                />
-            <TextInput
-                style = {styles.textInput}
-                placeholder="Setor"
-                value={setor}
-                onChangeText={setSetor}
-                />                
-            <Text style ={styles.textSaida}>{senha} </Text>
-            <View style ={styles.btnContainer}>
-                <Link href ={"./dashboard"}>
-                    <TouchableOpacity style = {styles.buttons}>
-                    <Text style = {styles.buttonsText}>Entrar</Text>
-                    </TouchableOpacity>
-                </Link>
-                <Link href={"/"}>
-                    <TouchableOpacity style = {styles.buttons}>
-                    <Text style = {styles.buttonsText}>Voltar</Text>
-                    </TouchableOpacity>
-                </Link>
-            </View>
-        </View>
-    )
+import { Image } from "expo-image";
+import { Link } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
+
+export default function Index() {
+  const logo =
+    "https://uptight-teal-jxjxnotb.edgeone.dev/";
+
+  const fundo =
+    "https://encouraging-red-cc1vbiqm.edgeone.dev/";
+
+  return (
+    <View style={styles.container}>
+      <Image
+        source={{ uri: fundo }}
+        style={styles.fundo}
+        contentFit="cover"
+      />
+
+      <View style={styles.conteudo}>
+        <Image
+          source={{ uri: logo }}
+          style={styles.logo}
+          contentFit="contain"
+        />
+
+        <Link href="/login" asChild>
+          <Text style={styles.entrar}>ENTRAR</Text>
+        </Link>
+      </View>
+    </View>
+  );
 }
- 
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        gap: 15,
-        alignItems: "center",
-        paddingTop: 100,
-        backgroundColor: "#ffffff",
-        padding: 20,
-    },
-    
-    logo: {
-        width: 750, 
-        height: 450,
-        marginTop:-60,
-        marginBottom:-50
-    },
-    titulo: {
-        fontSize: 22,
-        fontWeight: 400,
-        marginBottom: 20,
-    },
-    textSaida:{
-        fontSize: 14,
-        color: "red",
-        marginBottom:10,
-        marginTop: -45
-    },
-    textInput: {
-        backgroundColor: "#bdc2c9",
-        color: "white",
-        marginBottom:0,
-        fontWeight: 600, 
-        letterSpacing: 1.5,
-        borderRadius: 7,
-        padding: 10,
-        width: "100%"
-    },
-    buttonsText: {
-        backgroundColor: "#1e3a8a",
-        color: "white",
-        fontSize: 16,
-        fontWeight: "bold",
-        textAlign: "center",
-        paddingVertical: 7,
-        paddingHorizontal: 12
-    },
-    btnContainer:{
-        width: "60%",
-        gap: 20,
-        flex:-1,
-        justifyContent: "center",
-        flexDirection: "row"
-    },
-    buttons: {
-        backgroundColor: "#1e3a8a",
-        borderRadius: 10,
-        flex: 1,
-        padding: 10,
-        width: 120,
-    }
-})
- 
+  container: {
+    flex: 1,
+  },
+
+  fundo: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+  },
+
+  conteudo: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  logo: {
+    width: 300,
+    height: 300,
+    marginBottom: 20,
+  },
+
+  entrar: {
+    color: "#ffffff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});
