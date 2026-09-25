@@ -1,33 +1,46 @@
 import { Image } from "expo-image";
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { useEffect } from "react";
+import { StyleSheet, View } from "react-native";
 
 export default function Index() {
-  const logo =
-    "https://uptight-teal-jxjxnotb.edgeone.dev/";
+  const logo = require("../../../assets/images/logo.png");
+  const fundo = require("../../../assets/images/fundo_mãos.png");
+  const gradiente = require("../../../assets/images/fundo_gradiente.png");
 
-  const fundo =
-    "https://encouraging-red-cc1vbiqm.edgeone.dev/";
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.replace("/login");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={styles.container}>
+
       <Image
-        source={{ uri: fundo }}
+        source={gradiente}
+        style={styles.fundo}
+        contentFit="cover"
+      />
+
+      <Image
+        source={fundo}
         style={styles.fundo}
         contentFit="cover"
       />
 
       <View style={styles.conteudo}>
+
         <Image
-          source={{ uri: logo }}
+          source={logo}
           style={styles.logo}
           contentFit="contain"
         />
 
-        <Link href="/login" asChild>
-          <Text style={styles.entrar}>ENTRAR</Text>
-        </Link>
       </View>
+
     </View>
   );
 }
@@ -52,12 +65,5 @@ const styles = StyleSheet.create({
   logo: {
     width: 300,
     height: 300,
-    marginBottom: 20,
-  },
-
-  entrar: {
-    color: "#ffffff",
-    fontSize: 18,
-    fontWeight: "bold",
   },
 });

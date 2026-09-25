@@ -10,19 +10,17 @@ import {
 } from "react-native";
 
 export default function Login() {
-  const fundo =
-    "https://encouraging-red-cc1vbiqm.edgeone.dev/";
-
-  const logo =
-    "https://uptight-teal-jxjxnotb.edgeone.dev/";
+  const logo = require("../../../assets/images/logo.png");
+  const gradiente = require("../../../assets/images/fundo_gradiente.png");
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   return (
     <View style={styles.container}>
+
       <Image
-        source={{ uri: fundo }}
+        source={gradiente}
         style={styles.fundo}
         contentFit="cover"
       />
@@ -31,6 +29,7 @@ export default function Login() {
 
         {/* MENU SUPERIOR */}
         <View style={styles.topo}>
+
           <Link href="/login" asChild>
             <TouchableOpacity>
               <Text style={styles.entrar}>ENTRAR</Text>
@@ -42,11 +41,12 @@ export default function Login() {
               <Text style={styles.cadastrar}>CADASTRAR</Text>
             </TouchableOpacity>
           </Link>
+
         </View>
 
         {/* LOGO */}
         <Image
-          source={{ uri: logo }}
+          source={logo}
           style={styles.logo}
           contentFit="contain"
         />
@@ -81,7 +81,7 @@ export default function Login() {
             </Text>
           </TouchableOpacity>
 
-          <Link href ="/dashboard" asChild>
+          <Link href="/dashboard" asChild>
             <TouchableOpacity style={styles.botao}>
               <Text style={styles.textoBotao}>
                 ENTRAR
@@ -90,7 +90,9 @@ export default function Login() {
           </Link>
 
         </View>
+
       </View>
+
     </View>
   );
 }

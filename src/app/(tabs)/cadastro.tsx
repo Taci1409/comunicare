@@ -10,11 +10,8 @@ import {
 } from "react-native";
 
 export default function Cadastro() {
-  const fundo =
-    "https://encouraging-red-cc1vbiqm.edgeone.dev/";
-
-  const logo =
-    "https://uptight-teal-jxjxnotb.edgeone.dev/";
+  const logo = require("../../../assets/images/logo.png");
+  const gradiente = require("../../../assets/images/fundo_gradiente.png");
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -23,8 +20,10 @@ export default function Cadastro() {
 
   return (
     <View style={styles.container}>
+
+      {/* FUNDO */}
       <Image
-        source={{ uri: fundo }}
+        source={gradiente}
         style={styles.fundo}
         contentFit="cover"
       />
@@ -33,6 +32,7 @@ export default function Cadastro() {
 
         {/* MENU SUPERIOR */}
         <View style={styles.topo}>
+
           <Link href="/login" asChild>
             <TouchableOpacity>
               <Text style={styles.entrar}>
@@ -48,11 +48,12 @@ export default function Cadastro() {
               </Text>
             </TouchableOpacity>
           </Link>
+
         </View>
 
         {/* LOGO */}
         <Image
-          source={{ uri: logo }}
+          source={logo}
           style={styles.logo}
           contentFit="contain"
         />
@@ -100,7 +101,9 @@ export default function Cadastro() {
           </TouchableOpacity>
 
         </View>
+
       </View>
+
     </View>
   );
 }
