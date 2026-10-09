@@ -1,6 +1,7 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { router } from "expo-router";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Dashboard() {
   const logo = require("../../assets/images/logo.png");
@@ -93,23 +94,19 @@ export default function Dashboard() {
 
         </TouchableOpacity>
 
-        {/* RECURSOS */}
         <Text style={styles.tituloSecao}>
           RECURSOS
         </Text>
 
         <View style={styles.linha}>
 
-          {/* LIBRAS */}
           <TouchableOpacity
             style={styles.recurso}
             activeOpacity={0.8}
           >
 
             <View style={styles.iconeRecurso}>
-              <Text style={styles.iconeRecursoTexto}>
-                L
-              </Text>
+              <Ionicons name="body-outline"/>
             </View>
 
             <Text style={styles.tituloRecurso}>
@@ -122,16 +119,13 @@ export default function Dashboard() {
 
           </TouchableOpacity>
 
-          {/* ALFABETO */}
           <TouchableOpacity
             style={styles.recurso}
             activeOpacity={0.8}
           >
 
             <View style={styles.iconeRecurso}>
-              <Text style={styles.iconeRecursoTexto}>
-                A
-              </Text>
+            <Ionicons name="text-outline"/>
             </View>
 
             <Text style={styles.tituloRecurso}>
@@ -146,7 +140,6 @@ export default function Dashboard() {
 
         </View>
 
-        {/* FRASES RÁPIDAS */}
         <TouchableOpacity
           style={styles.frases}
           activeOpacity={0.8}
@@ -165,12 +158,11 @@ export default function Dashboard() {
           </View>
 
           <Text style={styles.seta}>
-            ›
+             <Ionicons name= "chevron-forward-outline"/>
           </Text>
 
         </TouchableOpacity>
 
-        {/* AVISO */}
         <View style={styles.aviso}>
 
           <View style={styles.pontoAviso} />
@@ -182,7 +174,7 @@ export default function Dashboard() {
             </Text>
 
             <Text style={styles.avisoDescricao}>
-              Utilize os recursos do ComunicAR para
+              Utilize os recursos do Comunicare para
               facilitar o atendimento.
             </Text>
 
@@ -455,10 +447,6 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     color: "#495B73",
   },
-
-  /* =========================
-     AVISO
-  ========================= */
 
   aviso: {
     marginTop: 14,
