@@ -13,9 +13,8 @@ import {
 export default function Tradutor() {
   const [texto, setTexto] = useState("");
 
-  const logo = require("../../../assets/images/logo.png");
-  const gradiente = require("../../../assets/images/fundo_gradiente.png");
-  const maos = require("../../../assets/images/fundo_mãos.png");
+  const logo = require("../../assets/images/logo.png");
+  const maos = require("../../assets/images/fundo_mãos.png");
 
   function traduzir() {
     console.log("Texto:", texto);
@@ -23,15 +22,6 @@ export default function Tradutor() {
 
   return (
     <View style={styles.container}>
-
-      {/* FUNDO */}
-      <Image
-        source={gradiente}
-        style={styles.fundo}
-        contentFit="cover"
-      />
-
-      {/* MÃOS DE LIBRAS */}
       <Image
         source={maos}
         style={styles.maos}
@@ -43,7 +33,6 @@ export default function Tradutor() {
         showsVerticalScrollIndicator={false}
       >
 
-        {/* TOPO */}
         <View style={styles.header}>
 
           <TouchableOpacity
@@ -63,13 +52,12 @@ export default function Tradutor() {
             />
 
             <Text style={styles.nomeApp}>
-              ComunicAR
+              Comunicare
             </Text>
           </View>
 
         </View>
 
-        {/* TÍTULO */}
         <View style={styles.tituloArea}>
 
           <Text style={styles.titulo}>
@@ -83,7 +71,6 @@ export default function Tradutor() {
 
         </View>
 
-        {/* ÁREA DO TRADUTOR */}
         <View style={styles.cardTradutor}>
 
           <Text style={styles.label}>
@@ -99,8 +86,6 @@ export default function Tradutor() {
             multiline
             textAlignVertical="top"
           />
-
-          {/* BOTÃO */}
           <TouchableOpacity
             style={styles.botao}
             onPress={traduzir}
@@ -113,7 +98,6 @@ export default function Tradutor() {
 
         </View>
 
-        {/* RESULTADO */}
         <View style={styles.resultado}>
 
           <View style={styles.resultadoTopo}>
@@ -142,7 +126,6 @@ export default function Tradutor() {
 
         </View>
 
-        {/* DICA */}
         <View style={styles.dica}>
 
           <View style={styles.dicaIcone}>

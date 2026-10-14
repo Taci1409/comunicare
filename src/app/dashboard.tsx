@@ -46,10 +46,6 @@ export default function Dashboard() {
 
         <View style={styles.saudacao}>
 
-          <Text style={styles.ola}>
-            OLÁ!
-          </Text>
-
           <Text style={styles.titulo}>
             Como podemos ajudar?
           </Text>
@@ -68,9 +64,7 @@ export default function Dashboard() {
         >
 
           <View style={styles.iconeTradutor}>
-            <Text style={styles.iconeTexto}>
-              L
-            </Text>
+            <Ionicons name= "language-outline"/>
           </View>
 
           <View style={styles.tradutorTexto}>
